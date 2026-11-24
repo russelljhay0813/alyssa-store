@@ -1,5 +1,5 @@
 
-# Thread & Form
+# Alyssa Thrift Store
 
 A responsive React storefront and private inventory dashboard backed by Supabase. Products, stock, sales, and product images are loaded from the connected Supabase project; the app does not seed or display sample inventory.
 

@@ -9,7 +9,7 @@
 .brand-icon span:nth-child(1) { height: 7px; transform: rotate(-16deg); }
 .brand-icon span:nth-child(2) { height: 11px; }
 .brand-icon span:nth-child(3) { height: 7px; transform: rotate(16deg); }
-.wordmark-amp { margin: 0 2px; color: #879078; font-family: var(--serif); font-size: 15px; font-style: italic; font-weight: 500; }
+.wordmark-secondary { color: #879078; font-weight: 500; }
 .store-nav { display: flex; align-items: center; gap: 38px; margin-left: 28px; }
 .store-nav a, .header-shop-link { color: #59574f; font-size: 11px; transition: color .18s ease; }
 .store-nav a:hover, .header-shop-link:hover { color: #77816b; }

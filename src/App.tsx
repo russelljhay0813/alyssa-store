@@ -432,9 +432,9 @@ function Storefront({
     <div className="storefront">
       <div className="announcement"><Sparkles size={13} /> Thoughtfully made. Worn on repeat. <span>Fewer pieces. More stories.</span></div>
       <header className="store-header">
-        <button className="wordmark" onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); onCategory('All'); onSearch('') }} aria-label="Thread & Form home">
+        <button className="wordmark" onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); onCategory('All'); onSearch('') }} aria-label="Alyssa Thrift Store home">
           <span className="brand-icon"><span /><span /><span /></span>
-          <span>THREAD<span className="wordmark-amp">&</span>FORM</span>
+          <span>ALYSSA <span className="wordmark-secondary">THRIFT STORE</span></span>
         </button>
         <nav className="store-nav" aria-label="Main navigation">
           <a href="#collection">Shop collection</a>
@@ -513,12 +513,12 @@ function Storefront({
 
       <footer className="store-footer">
         <div className="footer-main">
-          <div><a className="wordmark footer-brand" href="#"><span className="brand-icon"><span /><span /><span /></span><span>THREAD<span className="wordmark-amp">&</span>FORM</span></a><p>Good things, thoughtfully worn.</p></div>
+          <div><a className="wordmark footer-brand" href="#"><span className="brand-icon"><span /><span /><span /></span><span>ALYSSA <span className="wordmark-secondary">THRIFT STORE</span></span></a><p>Good things, thoughtfully worn.</p></div>
           <div className="footer-note"><span>OUR APPROACH</span><span>Fewer pieces. More thoughtful choices.</span></div>
           <div className="footer-note"><span>A GOOD REMINDER</span><span>Dress like yourself.</span></div>
           <button className="admin-entry" onClick={onAdmin}>Store owner <ArrowRight size={14} /></button>
         </div>
-        <div className="footer-bottom"><span>© {pageLoadedAt.getFullYear()} Thread & Form</span><span>Made with a little more intention.</span><span>Clothes you'll come back to.</span></div>
+        <div className="footer-bottom"><span>© {pageLoadedAt.getFullYear()} Alyssa Thrift Store</span><span>Made with a little more intention.</span><span>Clothes you'll come back to.</span></div>
       </footer>
     </div>
   )
@@ -593,7 +593,7 @@ function AdminLogin({
 }) {
   return (
     <div className="login-page">
-      <header className="login-header"><button className="wordmark" onClick={onStore}><span className="brand-icon"><span /><span /><span /></span><span>THREAD<span className="wordmark-amp">&</span>FORM</span></button><button className="back-store" onClick={onStore}><ArrowLeft size={15} /> Back to store</button></header>
+      <header className="login-header"><button className="wordmark" onClick={onStore}><span className="brand-icon"><span /><span /><span /></span><span>ALYSSA <span className="wordmark-secondary">THRIFT STORE</span></span></button><button className="back-store" onClick={onStore}><ArrowLeft size={15} /> Back to store</button></header>
       <div className="login-layout">
         <div className="login-art"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=85" alt="A thoughtfully styled wardrobe in warm natural light" /><div className="login-art-overlay"><span>THE GOOD THINGS, EDIT</span><strong>Thoughtfully worn.<br /><em>Beautifully yours.</em></strong></div></div>
         <div className="login-form-wrap"><div className="login-mark"><span className="brand-icon"><span /><span /><span /></span><span className="eyebrow">THE OWNER'S STUDIO</span></div><h1>Welcome<br />back<span>.</span></h1><p className="login-intro">Sign in to tend to your collection.</p>
@@ -607,7 +607,7 @@ function AdminLogin({
           <p className="login-security"><span className="secure-dot" /> Secure access for authorized store owners only.</p>
         </div>
       </div>
-      <div className="login-footer"><span>© {pageLoadedAt.getFullYear()} Thread & Form</span><span>Fewer, better things. Always.</span></div>
+      <div className="login-footer"><span>© {pageLoadedAt.getFullYear()} Alyssa Thrift Store</span><span>Fewer, better things. Always.</span></div>
     </div>
   )
 }
@@ -674,8 +674,8 @@ function AdminDashboard({
   return (
     <div className="admin-shell">
       <aside className={`admin-sidebar ${sidebarOpen ? 'admin-sidebar-open' : ''}`}>
-        <button className="admin-brand" onClick={onStore}><span className="brand-icon"><span /><span /><span /></span><span>THREAD<span className="wordmark-amp">&</span>FORM<small>THE OWNER'S STUDIO</small></span></button>
-        <button className="store-switcher" onClick={onStore}><span className="store-switch-icon">T</span><span><strong>Thread & Form</strong><small>View live storefront</small></span><ArrowUpRight size={15} /></button>
+        <button className="admin-brand" onClick={onStore}><span className="brand-icon"><span /><span /><span /></span><span>ALYSSA THRIFT STORE<small>THE OWNER'S STUDIO</small></span></button>
+        <button className="store-switcher" onClick={onStore}><span className="store-switch-icon">A</span><span><strong>Alyssa Thrift Store</strong><small>View live storefront</small></span><ArrowUpRight size={15} /></button>
         <nav className="admin-nav" aria-label="Admin navigation">
           {sidebarGroups.map((group) => <div className="nav-group" key={group.title}><span className="nav-group-title">{group.title}</span>{group.items.map(({ id, label, icon: Icon }) => <button key={id} onClick={() => navigate(id)} className={`nav-item ${activeTab === id ? 'nav-item-active' : ''}`}><Icon size={17} strokeWidth={1.8} /><span>{label}</span>{id === 'inventory' && lowStockCount > 0 && <span className="nav-count">{lowStockCount}</span>}</button>)}</div>)}
         </nav>
@@ -886,7 +886,7 @@ function ProductForm({ product, busy, onSave, onCancel }: { product: Product | n
 
 function SettingsPage({ email, onNotice }: { email: string; onNotice: (text: string, error?: boolean) => void }) {
   return (
-    <div className="admin-list-page"><div className="admin-page-heading"><div><div className="eyebrow"><span className="eyebrow-line" /> YOUR STORE, YOUR WAY</div><h1>Settings<span className="section-period">.</span></h1><p>A few details about your store and account.</p></div></div><div className="settings-card"><div className="settings-card-heading"><span className="settings-icon"><Settings size={17} /></span><div><h2>Store profile</h2><p>Your storefront basics.</p></div></div><div className="settings-row"><span><strong>Store name</strong><small>The name displayed on your storefront.</small></span><strong>Thread & Form</strong></div><div className="settings-row"><span><strong>Store currency</strong><small>Used for product prices and sales reporting.</small></span><strong>USD · $</strong></div><div className="settings-row"><span><strong>Product images</strong><small>Securely hosted in Supabase Storage.</small></span><strong className="settings-connected"><span className="online-indicator" /> Connected</strong></div></div><div className="settings-card account-settings"><div className="settings-card-heading"><span className="settings-icon"><LogOut size={17} /></span><div><h2>Owner account</h2><p>Signed in securely with Supabase Authentication.</p></div></div><div className="settings-row"><span><strong>Signed in as</strong><small>Only authorized store owners can access this dashboard.</small></span><strong>{email}</strong></div><div className="settings-row"><span><strong>Access control</strong><small>Managed by your Supabase admin_users table and RLS policies.</small></span><strong className="settings-connected"><span className="online-indicator" /> Protected</strong></div></div><button className="button button-light migration-copy" onClick={async () => { try { await navigator.clipboard.writeText('supabase/migrations/202611240001_store.sql'); onNotice('Migration path copied to clipboard.') } catch { onNotice('Migration: supabase/migrations/202611240001_store.sql') } }}><ClipboardList size={15} /> Copy database migration path</button></div>
+    <div className="admin-list-page"><div className="admin-page-heading"><div><div className="eyebrow"><span className="eyebrow-line" /> YOUR STORE, YOUR WAY</div><h1>Settings<span className="section-period">.</span></h1><p>A few details about your store and account.</p></div></div><div className="settings-card"><div className="settings-card-heading"><span className="settings-icon"><Settings size={17} /></span><div><h2>Store profile</h2><p>Your storefront basics.</p></div></div><div className="settings-row"><span><strong>Store name</strong><small>The name displayed on your storefront.</small></span><strong>Alyssa Thrift Store</strong></div><div className="settings-row"><span><strong>Store currency</strong><small>Used for product prices and sales reporting.</small></span><strong>USD · $</strong></div><div className="settings-row"><span><strong>Product images</strong><small>Securely hosted in Supabase Storage.</small></span><strong className="settings-connected"><span className="online-indicator" /> Connected</strong></div></div><div className="settings-card account-settings"><div className="settings-card-heading"><span className="settings-icon"><LogOut size={17} /></span><div><h2>Owner account</h2><p>Signed in securely with Supabase Authentication.</p></div></div><div className="settings-row"><span><strong>Signed in as</strong><small>Only authorized store owners can access this dashboard.</small></span><strong>{email}</strong></div><div className="settings-row"><span><strong>Access control</strong><small>Managed by your Supabase admin_users table and RLS policies.</small></span><strong className="settings-connected"><span className="online-indicator" /> Protected</strong></div></div><button className="button button-light migration-copy" onClick={async () => { try { await navigator.clipboard.writeText('supabase/migrations/202611240001_store.sql'); onNotice('Migration path copied to clipboard.') } catch { onNotice('Migration: supabase/migrations/202611240001_store.sql') } }}><ClipboardList size={15} /> Copy database migration path</button></div>
   )
 }
 
